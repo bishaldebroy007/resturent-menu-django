@@ -16,3 +16,8 @@ class Booking(models.Model):
 class Menu(models.Model):
    name = models.CharField(max_length=200)
    price = models.IntegerField()
+   
+   # since in the admin panel (super user) instead of showing the actual names its showing "Menu object (1)" etc.
+   def __str__(self):
+      return self.name
+   

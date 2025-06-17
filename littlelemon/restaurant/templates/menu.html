@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% comment %} Incase we have static images {% endcomment %}
+{% load static %}
+
+{% comment %} We are extending base.html {% endcomment %}
+
+{% comment %} What ever we put inside the block content and endblock will be inside base.html <main></main> tag {% endcomment %}
+{% block content %}
+
+<h1>Our Menu</h1>
+<div class="column">
+    {% comment %} As we remember, menu was a dictionary {% endcomment %}
+    {% for item in menu %} 
+    <p>
+        {{item.name}}
+        <span class="menu-price">{{item.price}}.00 BDT</span>
+    </p>
+    {% endfor %}
+</div>
+
+{% endblock %}

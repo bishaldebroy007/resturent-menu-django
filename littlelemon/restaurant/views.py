@@ -22,3 +22,8 @@ def book(request):
     return render(request, 'book.html', context)
 
 # Add your code here to create new views
+
+def menu(request):
+    menu_data = Menu.objects.all() # this will add all the menu items to the menu_data variable
+    # now we can render it as a html page
+    return render(request, 'menu.html', {'menu': menu_data})
